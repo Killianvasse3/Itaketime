@@ -7,6 +7,26 @@ import VueTextAreaAutosize from 'vue-textarea-autosize';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import VueClock from '@dangvanthanh/vue-clock';
+import VueYoutube from 'vue-youtube';
+import YouTubePlaylist from 'vue-youtube-playlist';
+
+Vue.component('youtube-playlist', YouTubePlaylist);
+ 
+Vue.component('youtube-playlist', require('vue-youtube-playlist'));
+ 
+Vue.component('some-component', {
+    components: {
+        YouTubePlaylist
+    }
+});
+ 
+Vue.component('some-component', {
+    components: {
+        'youtube-playlist': YouTubePlaylist
+    }
+});
+
+Vue.use(VueYoutube)
 
 Vue.use(VueClock);
 

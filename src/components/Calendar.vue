@@ -94,72 +94,7 @@
             </v-row>
           </div>
           <div class="trai2"></div>
-          <div class="categories">
-            <div class="titlecat">
-              <h1>Mes catégories</h1>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="logue2 bi bi-chevron-up"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-                />
-              </svg>
-            </div>
-            <div class="namecat">
-              <div class="chaque">
-                <div class="couleur1"></div>
-                <p>Anniv</p>
-              </div>
-              <div class="chaque">
-                <div class="couleur2"></div>
-                <p>Rappels</p>
-              </div>
-              <div class="chaque">
-                <div class="couleur3"></div>
-                <p>Tasks</p>
-              </div>
-              <div class="chaque">
-                <div class="couleur4"></div>
-                <p>RDV</p>
-              </div>
-              <div class="chaque">
-                <div class="couleur5"></div>
-                <p>Objectifs</p>
-              </div>
-            </div>
-            <div class="titlecal">
-              <h1>Mes agendas</h1>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="logue2 bi bi-chevron-up"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-                />
-              </svg>
-            </div>
-            <div class="namecat">
-              <div class="chaque">
-                <div class="couleur6"></div>
-                <p>Pro</p>
-              </div>
-              <div class="chaque">
-                <div class="couleur7"></div>
-                <p>Perso</p>
-              </div>
-            </div>
-          </div>
+          <youtube :video-id="videoId" :player-vars="playerVars" @playing="playing"></youtube>
         </div>
         <div class="four">
           <div class="calendar-examples">
@@ -308,11 +243,23 @@ export default {
     events: [],
     dialog: false,
     minievents: [],
+    videoId: "X3-Bw31fI2s",
+    playerVars: {
+      autoplay: 1
+    },
   }),
   mounted() {
     this.getEvents();
   },
+  computed: {
+    player() {
+      return this.$refs.youtube.player
+    }
+  },
   methods: {
+    playing() {
+      console.log('we are watching!!!')
+    },
     async getEvents() {
       let snapshot = await db.collection("calEvent").get();
       let events = [];
@@ -406,26 +353,35 @@ export default {
 </script>
 
 <style>
+div .v-main__wrap {
+  background-color: #303030 !important;
+}
+iframe {
+  width: 90%;
+  max-width: 650px;
+  margin-left: 20px;
+  height: 45%;
+}
 div .clock[data-v-91068ba8] {
   background: none !important;
   border: solid 1px #6e7378 !important;
   display: flex;
-  margin-top: 3px;
-  margin-bottom: 4px !important;
+  margin-top: 7px;
+  margin-bottom: 7px !important;
 }
 div .clock__hours[data-v-91068ba8] {
   border-right: none !important;
-  font-size: 1rem !important;
+  font-size: 1.4rem !important;
 }
 div .clock__minutes[data-v-91068ba8] {
   border-right: none !important;
-  font-size: 1rem !important;
+  font-size: 1.4rem !important;
 }
 div .clock__seconds[data-v-91068ba8] {
-  font-size: 1rem !important;
+  font-size: 1.4rem !important;
 }
 div .clock__hourtime[data-v-91068ba8] {
-  font-size: 0.5rem !important;
+  font-size: 0.6rem !important;
 }
 div .v-date-picker-table {
   height: 400px !important;
@@ -509,6 +465,7 @@ div .theme--dark.v-calendar-weekly .v-calendar-weekly__day {
   width: 76%;
   height: 0%;
   margin-left: 15%;
+  margin-bottom: 5%;
 }
 .trai3 {
   border: solid 2px #0fb14a;
@@ -678,7 +635,7 @@ div .theme--dark.v-calendar-weekly .v-calendar-weekly__day {
 .three {
   transform: translate(-10%);
   grid-column: 1 / 14;
-  grid-row: 1 / 95;
+  grid-row: 1 / 99;
   border-radius: 15px;
   background-color: #202020;
   border: solid 1px #6e7378;
@@ -703,7 +660,7 @@ div .theme--dark.v-calendar-weekly .v-calendar-weekly__day {
 }
 .four {
   grid-column: 13 / 84;
-  grid-row: 8 / 95;
+  grid-row: 8 / 99;
   border-radius: 11px;
   padding-top: 1%;
   padding-left: 1%;
