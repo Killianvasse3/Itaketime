@@ -1,9 +1,6 @@
 <template>
   <div>
     <div id="nav">
-      <div>
-        <img id="burger" src="../assets/burger.png" alt="menu burger" />
-      </div>
       <VueClock />
       <div>
         <img id="logo" src="../assets/logo_take.png" alt="logo I take time" />
@@ -143,7 +140,7 @@
                     </v-form>
                   </v-container>
                 </v-dialog>
-                <v-sheet height="795" dark>
+                <v-sheet height="780" dark>
                   <v-calendar
                     ref="calendar"
                     v-model="focus"
@@ -387,8 +384,9 @@ div .clock[data-v-91068ba8] {
   background: none !important;
   border: solid 1px #6e7378 !important;
   display: flex;
-  margin-top: 7px;
-  margin-bottom: 7px !important;
+  margin-top: 5px;
+  margin-right: 15%;
+  margin-bottom: 6px !important;
 }
 div .clock__hours[data-v-91068ba8] {
   border-right: none !important;
@@ -447,15 +445,9 @@ div .theme--dark.v-calendar-weekly .v-calendar-weekly__day {
   color: #aefffc;
 }
 
-#burger {
-  width: 2.8%;
-  padding: 0.4%;
-}
-
 #logo {
-  width: 5%;
-  margin-left: 85%;
-  padding: 0.3%;
+  width: 8%;
+  margin-left: 95%;
 }
 .wrapper {
   background-color: #303030;
