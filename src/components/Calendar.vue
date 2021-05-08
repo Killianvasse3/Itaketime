@@ -94,7 +94,7 @@
             </v-row>
           </div>
           <div class="trai2"></div>
-          <youtube :video-id="videoId" :player-vars="playerVars" @playing="playing"></youtube>
+          <youtube :video-id="VODid" :player-vars="playerVars" @playing="playing"></youtube>
         </div>
         <div class="four">
           <div class="calendar-examples">
@@ -243,13 +243,27 @@ export default {
     events: [],
     dialog: false,
     minievents: [],
-    videoId: "X3-Bw31fI2s",
     playerVars: {
       autoplay: 1
     },
+    VideoId: null,
+    VODid: {},
+    idVOD: [
+        'X3-Bw31fI2s',
+        'DWcJFNfaw9c',
+        'hx1omESNUIE',
+        'D-FIfQ5bINo',
+        '9sk0ROz6TVE',
+        'CX45pYvxDiA',
+        '68ugkg9RePc',
+        'XCiDuy4mrWU',
+        'gy1B3agGNxw',
+        'bAVTn14kdyg',
+      ],
   }),
   mounted() {
     this.getEvents();
+    this.pushVODid();
   },
   computed: {
     player() {
@@ -272,6 +286,9 @@ export default {
       });
       this.minievents = minievents;
       this.events = events;
+      this.VideoId = Math.floor(Math.random() * (this.idVOD.length));
+      this.VODid = this.idVOD[this.VideoId];
+      console.log(this.VODid)
     },
     async addEvent() {
       if (this.name && this.start && this.end) {
