@@ -9,7 +9,7 @@
     <div class="home">
       <div class="wrapper">
         <div class="two">
-          <v-sheet dark height="95%" width="100%">
+          <v-sheet dark style="border-radius: 20px;background-color: #202020;" height="95%" width="100%">
             <v-toolbar style="background-color: #202020;whith: 100%;margin-right: 1%;" flat>
               <v-btn color="primary" class="mr-4" @click="dialog = true" dark>
                 New Event
@@ -140,7 +140,7 @@
                     </v-form>
                   </v-container>
                 </v-dialog>
-                <v-sheet height="780" dark>
+                <v-sheet height="810" dark>
                   <v-calendar
                     ref="calendar"
                     v-model="focus"
@@ -415,9 +415,6 @@ div .v-btn--fab.v-size--small {
   width: 30px !important;
   height: 30px !important;
 }
-div .theme--dark.v-sheet {
-  background-color: none !important;
-}
 div .v-calendar-weekly__head-weekday {
   border-right: none !important;
 }
@@ -675,9 +672,7 @@ div .theme--dark.v-calendar-weekly .v-calendar-weekly__day {
   grid-column: 13 / 84;
   grid-row: 8 / 99;
   border-radius: 11px;
-  padding-top: 1%;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding: 0.7%;
   border: solid 1px #6e7378;
   background-color: #202020;
 }
