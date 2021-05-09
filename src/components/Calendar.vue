@@ -10,7 +10,7 @@
       <div class="wrapper">
         <div class="two">
           <v-sheet dark height="95%" width="100%">
-            <v-toolbar style="background-color: #1E1E1E;whith: 100%;" flat>
+            <v-toolbar style="background-color: #202020;whith: 100%;margin-right: 1%;" flat>
               <v-btn color="primary" class="mr-4" @click="dialog = true" dark>
                 New Event
               </v-btn>
@@ -677,7 +677,7 @@ div .theme--dark.v-calendar-weekly .v-calendar-weekly__day {
   border-radius: 11px;
   padding-top: 1%;
   padding-left: 1%;
-  padding-right: 2%;
+  padding-right: 1%;
   border: solid 1px #6e7378;
   background-color: #202020;
 }
