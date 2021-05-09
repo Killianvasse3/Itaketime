@@ -19,8 +19,10 @@ export default {
 * {
   margin: 0%;
   padding: 0%;
+  overflow: -moz-hidden-unscrollable;
 }
 html {
   background-color: #303030;
+  overflow: hidden !important;
 }
 </style>
