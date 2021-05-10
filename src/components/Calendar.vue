@@ -140,7 +140,7 @@
                     </v-form>
                   </v-container>
                 </v-dialog>
-                <v-sheet height="810" dark>
+                <v-sheet height="780" dark>
                   <v-calendar
                     ref="calendar"
                     v-model="focus"
@@ -378,7 +378,7 @@ iframe {
   width: 90%;
   max-width: 650px;
   margin-left: 20px;
-  height: 45%;
+  height: 44%;
 }
 div .clock[data-v-91068ba8] {
   background: none !important;
@@ -645,7 +645,7 @@ div .theme--dark.v-calendar-weekly .v-calendar-weekly__day {
 .three {
   transform: translate(-10%);
   grid-column: 1 / 14;
-  grid-row: 1 / 99;
+  grid-row: 1 / 95;
   border-radius: 15px;
   background-color: #202020;
   border: solid 1px #6e7378;
@@ -670,7 +670,7 @@ div .theme--dark.v-calendar-weekly .v-calendar-weekly__day {
 }
 .four {
   grid-column: 13 / 84;
-  grid-row: 8 / 99;
+  grid-row: 8 / 95;
   border-radius: 11px;
   padding: 0.7%;
   border: solid 1px #6e7378;
